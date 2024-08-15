@@ -1,3 +1,5 @@
+// This is a comment to help GitHub detect JavaScript
+
 document.addEventListener("DOMContentLoaded", function() {
     const elements = document.querySelectorAll('.animated');
     
