@@ -1,23 +1,25 @@
+/* This is a comment to help GitHub detect CSS */
 /* Initial states for animations */
 .animated {
-    opacity: 1;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
-  }
-  
-  .animated.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  /* Skills and Projects layout */
-  .skill-icon {
-    transition: transform 0.3s ease;
-    border-radius: 30%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+  opacity: 1;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
 }
+
+.animated.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Skills and Projects layout */
+.skill-icon {
+  transition: transform 0.3s ease;
+  border-radius: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
 .name {
   color: aqua;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
@@ -25,102 +27,107 @@
 }
 
 .cool {
-    background: linear-gradient(90deg, rgb(4, 13, 44), rgb(129, 60, 240), rgb(36, 162, 247)); 
-    animation: bg 5s linear infinite;
+  background: linear-gradient(90deg, rgb(4, 13, 44), rgb(129, 60, 240), rgb(36, 162, 247));
+  animation: bg 5s linear infinite;
 }
 
 @keyframes bg {
-    100% {
-        filter: hue-rotate(360deg);
-    }
+  100% {
+    filter: hue-rotate(360deg);
+  }
 }
 
 .text-center p {
-    font-style: italic;
-    text-align: center;
-    margin-top: 8px;
+  font-style: italic;
+  text-align: center;
+  margin-top: 8px;
 }
 
 .skill-icon:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* Icon glow effect */
 .icon-glow {
-    transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .icon-glow:hover {
-    box-shadow: 0 0 10px rgba(19, 241, 11, 0.7);
+  box-shadow: 0 0 10px rgba(19, 241, 11, 0.7);
 }
 
 /* Responsive grid layout */
 @media (min-width: 640px) {
-    .grid-cols-3 {
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (max-width: 639px) {
-    .grid-cols-2 {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-  
-  /* Responsive design */
-  @media (max-width: 640px) {
-    .container {
-      padding: 4px;
-    }
-  
-    .grid-cols-2 {
-      grid-template-columns: repeat(1, 1fr);
-    }
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .container {
+    padding: 4px;
   }
-  
-  @media (max-width: 768px) {
-    .container {
-      padding: 6px;
-    }
+
+  .grid-cols-2 {
+    grid-template-columns: repeat(1, 1fr);
   }
-  
-  @media (min-width: 1024px) {
-    .container {
-      padding: 8px;
-    }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 6px;
   }
-  
-  /* Grid layout for large and small screens */
-.grid {
-  display: grid;
-  gap: 1.5rem; /* Adjust the gap between grid items as needed */
 }
 
 @media (min-width: 1024px) {
+  .container {
+    padding: 8px;
+  }
+}
+
+/* Grid layout for large and small screens */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  /* Adjust the gap between grid items as needed */
+}
+
+@media (min-width: 1024px) {
+
   /* 3 columns on large screens (1024px and above) */
   .grid-cols-3 {
-      grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (max-width: 1023px) {
+
   /* 2 columns on small screens (1023px and below) */
   .grid-cols-2 {
-      grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 .w-81 {
   border-radius: 40%;
 }
+
 .space {
   text-align: center;
   color: wheat;
-  font-family:'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
+
 .text-gray-700 {
-  color:rgb(166, 213, 245)
+  color: rgb(166, 213, 245)
 }
 
 .rounded-full {
