@@ -24,4 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Initial check
   });
-  
+  document.querySelector('.hamburger').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+});
+

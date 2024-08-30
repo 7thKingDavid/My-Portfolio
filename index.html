@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eze David Azubuike Portfolio</title>
+    <title>Eze David</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./Styles/styles.css">
+    <link rel="icon" href="./Styles/images/logo.jpg" type="image/png">
 </head>
 
 <body class="bg-gradient-to-r from-blue-900 to-blue-400 cool">
@@ -14,23 +15,59 @@
     <!-- Header Section -->
     <header class="flex justify-between items-center p-6 bg-blue-800 text-white">
         <div>
-            <img src="# " alt="Logo" class="w-16">
+            <img src="./Styles/images/logo.jpg" alt="Logo" class="w-16">
         </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
     </header>
 
     <!-- Centered Name Section -->
-    <section class="text-center my-12 name">
+    <section id="#home" class="text-center my-12 name">
+        <p>WE CAN CHANGE THE WORLD TOGETHER</p>
+        <br>
+
+        <h1 class="text-4xl font-bold text-white animated">Hello, I'm</h1>
         <h1 class="text-4xl font-bold text-white animated">Eze David Azubuike</h1>
-        <p class="text-xl text-white animated">Junior Frontend Engineer</p>
-        <p class="text-white animated">ezedavid868@gmail.com | +2348155246010</p>
+        <h1 class="text-xl text-white animated">A Frontend Engineer</h1>
+        <p class="text-white animated">I'm interested in building responsive front-end web applications using
+            latest Technologies,<br> working with teams following industry standards.
+        </p>
     </section>
 
+    <!-- Social Links Section -->
+    <section class="text-center py-6">
+        <a href="https://www.linkedin.com/in/eze-david-azubuike/" target="_blank" class="mx-2">
+            <img src="./Styles/images/linkedIn" alt="LinkedIn" class="w-8 h-8 inline-block icon-glow w-81 touch">
+        </a>
+        <a href="https://github.com/7thKingDavid" target="_blank" class="mx-2">
+            <img src="./Styles/images/GitHub" alt="GitHub" class="w-8 h-8 inline-block icon-glow touch">
+        </a>
+        <a href="mailto:ezedavid868@gmail.com" class="mx-2">
+            <img src="./Styles/images/Gmail.png" alt="Mail" class="w-8 h-8 inline-block icon-glow w-81 touch">
+        </a>
+        <a href="tel:+2348155246010" class="mx-2">
+            <img src="./Styles/images/phoneCall" alt="Phone" class="w-8 h-8 inline-block icon-glow w-81 touch">
+        </a>
+    </section>
     <!-- About Section -->
-    <section class="container mx-auto p-6">
+    <section id="about" class="container mx-auto p-6">
         <div class="text-center animated">
-            <img src="./Styles/images/code1.jpg" alt="Eze David Azubuike"
-                class="w-32 h-32 rounded-full mx-auto mb-4 pic">
-            <h2 class="text-3xl font-semibold text-white mb-4">About Me</h2>
+
+            <h2 class="text-3xl font-semibold text-white mb-4">About</h2>
+            <p class="who">Who I Am:</p>
             <p class="text-gray-100 text-justify mx-8">
                 I am a diligent and highly motivated Frontend Engineer with over a year of hands-on experience in web
                 development. I am proficient in HTML, CSS3, JavaScript, React.js, Tailwind CSS, and Next.js alongside
@@ -41,28 +78,18 @@
                 teams and working remotely. In addition to my technical skills, I have a strong commitment to quality
                 and creativity in my work.
             </p>
-            <!-- Social Links Section -->
-            <section class="text-center py-6">
-                <a href="#" target="_blank" class="mx-2">
-                    <img src="./Styles/images/linkedIn" alt="LinkedIn" class="w-8 h-8 inline-block icon-glow w-81">
-                </a>
-                <a href="https://github.com/7thKingDavid" target="_blank" class="mx-2">
-                    <img src="./Styles/images/GitHub" alt="GitHub" class="w-8 h-8 inline-block icon-glow">
-                </a>
-                <a href="mailto:ezedavid868@gmail.com" class="mx-2">
-                    <img src="./Styles/images/Gmail.png" alt="Mail" class="w-8 h-8 inline-block icon-glow w-81">
-                </a>
-                <a href="tel:+2348155246010" class="mx-2">
-                    <img src="./Styles/images/phoneCall" alt="Phone" class="w-8 h-8 inline-block icon-glow w-81">
-                </a>
-            </section>
+
+            <img src="./Styles/images/code1.jpg" alt="Eze David Azubuike"
+                class="w-32 h-32 rounded-full mx-auto mb-4 pic">
         </div>
     </section>
+    <a href="#projects" class="link">Check out my Projects</a>
 
     <!-- Skills Section -->
-    <section class="container mx-auto p-6">
+    <section id="skills" class="container mx-auto p-6">
         <div class="bg-white shadow-md rounded p-6">
-            <h2 class="text-3xl font-semibold text-blue-700 mb-4 space">My Skills</h2>
+            <h1 class="text-3xl font-semibold text-blue-700 mb-4 space">My Skills</h1>
+            <p class="build1">What I can Do</p>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
                 <div class="m-4 text-center animated">
                     <img src="./Styles/images/HTML.png" alt="HTML" class="w-16 h-16 skill-icon">
@@ -83,7 +110,7 @@
                 <div class="m-4 text-center animated">
                     <img src="./Styles/images/next-js-logo-7929BCD36F-seeklogo.com.png" alt="Next.js"
                         class="w-16 h-16 skill-icon">
-                    <p class="mt-2">Next.js</p>
+                    <p class="mt-2">Next</p>
                 </div>
                 <div class="m-4 text-center animated">
                     <img src="./Styles/images/tailwind css.png" alt="Tailwind" class="w-16 h-16 skill-icon">
@@ -103,39 +130,56 @@
     </section>
 
     <!-- Projects Section -->
-    <section class="container mx-auto p-6">
-        <div class="bg-white shadow-md rounded p-6 cool">
+    <section id="projects" class="container mx-auto p-6">
+        <div class="bg-white shadow-md rounded p-6 cool project">
             <h2 class="text-3xl font-semibold text-blue-700 mb-4 space">Projects</h2>
+            <p class="build">What I've Built</p>
             <div class="grid grid-cols-2 gap-6">
-                <div class="bg-gray-100 p-4 rounded shadow animated">
-                    <h3 class="text-xl font-semibold">Project 1</h3>
-                    <p class="text-gray-600">Description of Project 1.</p>
+                <div class="bg-gray-100 p-4 rounded shadow animated nice">
+                    <a href="https://daily-quotes-eze-davids-projects.vercel.app/" target="_blank">
+                        <img src="./Styles/images/screenshot1.jpg" alt="Project Name Preview">
+                    </a>
+                    <h3 class="text-xl font-semibold nice1">DAILY QUOTES [SpiritSpeaks]</h3>
+                    <p class="text-gray-600 nice1">HTML/CSS/JavaScript</p>
                 </div>
-                <div class="bg-gray-100 p-4 rounded shadow animated">
-                    <h3 class="text-xl font-semibold">Project 2</h3>
-                    <p class="text-gray-600">Description of Project 2.</p>
+                <div class="bg-gray-100 p-4 rounded shadow animated nice">
+                    <a href="https://smack-ui-ux.vercel.app/" target="_blank">
+                        <img src="./Styles/images/screenshot2.jpg" alt="Project Name Preview">
+                    </a>
+                    <h3 class="text-xl font-semibold nice1">Slack UI/UX Design</h3>
+                    <p class="text-gray-600 nice1">HTML/CSS</p>
                 </div>
-                <div class="bg-gray-100 p-4 rounded shadow animated">
-                    <h3 class="text-xl font-semibold">Project 3</h3>
-                    <p class="text-gray-600">Description of Project 3.</p>
+                <!-- <div class="bg-gray-100 p-4 rounded shadow animated nice">
+                    <a href="#" target="_blank">
+                        <img src="#" alt="Project Name Preview">
+                    </a>
+                    <h3 class="text-xl font-semibold nice1">Project 3</h3>
+                    <p class="text-gray-600 nice1">Description of Project 3.</p>
                 </div>
-                <div class="bg-gray-100 p-4 rounded shadow animated">
-                    <h3 class="text-xl font-semibold">Project 4</h3>
-                    <p class="text-gray-600">Description of Project 4.</p>
-                </div>
+                <div class="bg-gray-100 p-4 rounded shadow animated nice">
+                    <a href="#" target="_blank">
+                        <img src="#" alt="Project Name Preview">
+                    </a>
+                    <h3 class="text-xl font-semibold nice1">Project 4</h3>
+                    <p class="text-gray-600 nice1">Description of Project 4.</p> -->
             </div>
+        </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="container mx-auto p-6">
+    <section id="#contact" class="container mx-auto p-6">
         <div class="bg-white shadow-md rounded p-6 cool">
             <h2 class="text-3xl font-semibold text-blue-700 mb-4 space">Contact</h2>
+            <p class="build">Get In Touch</p>
             <p class="text-gray-700 mb-4">
-                Feel free to reach out to me via email at <a href="mailto:ezedavid868@gmail.com"
-                    class="text-blue-600">ezedavid868@gmail.com</a> or call me at +2348155246010.
+            <h2 class="eze">Eze David Azubuike</h2>
+            <p class="king">Front-End Developer</p>
+            I am available for freelance, part-time or full-time positions.<br>
+            Feel free to reach out to me via email at <a href="mailto:ezedavid868@gmail.com"
+                class="text-blue-600">ezedavid868@gmail.com</a> or call me at +2348155246010.
             </p>
-            <form action="#" method="POST" class="space-y-4">
+            <form action="https://formspree.io/f/xeojnwdr" method="POST" class="space-y-4">
                 <div>
                     <label for="name" class="block text-gray-700">Name</label>
                     <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded" required>
@@ -157,17 +201,17 @@
 
     <!-- Social Links Section -->
     <section class="text-center py-6">
-        <a href="#" target="_blank" class="mx-2">
-            <img src="./Styles/images/linkedIn" alt="LinkedIn" class="w-8 h-8 inline-block icon-glow w-81">
+        <a href="https://www.linkedin.com/in/eze-david-azubuike/" target="_blank" class="mx-2">
+            <img src="./Styles/images/linkedIn" alt="LinkedIn" class="w-8 h-8 inline-block icon-glow w-81 touch">
         </a>
         <a href="https://github.com/7thKingDavid" target="_blank" class="mx-2">
-            <img src="./Styles/images/GitHub" alt="GitHub" class="w-8 h-8 inline-block icon-glow">
+            <img src="./Styles/images/GitHub" alt="GitHub" class="w-8 h-8 inline-block icon-glow touch">
         </a>
         <a href="mailto:ezedavid868@gmail.com" class="mx-2">
-            <img src="./Styles/images/Gmail.png" alt="Mail" class="w-8 h-8 inline-block icon-glow w-81">
+            <img src="./Styles/images/Gmail.png" alt="Mail" class="w-8 h-8 inline-block icon-glow w-81 touch">
         </a>
         <a href="tel:+2348155246010" class="mx-2">
-            <img src="./Styles/images/phoneCall" alt="Phone" class="w-8 h-8 inline-block icon-glow w-81">
+            <img src="./Styles/images/phoneCall" alt="Phone" class="w-8 h-8 inline-block icon-glow w-81 touch">
         </a>
     </section>
 

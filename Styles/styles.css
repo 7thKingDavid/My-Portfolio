@@ -1,5 +1,114 @@
 /* This is a comment to help GitHub detect CSS */
 /* Initial states for animations */
+
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 10px 20px;
+  position: relative;
+  align-items: center;
+  
+}
+
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  align-items: center;
+  right: 20px;
+  /* Aligns the hamburger icon to the right */
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-links a:hover {
+  color: #ff8c00;
+}
+
+/* Hidden by default */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: #333;
+    width: 200px;
+    border-radius: 5px;
+    z-index: 1;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links a {
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Resume Page Styles */
+header {
+  background-color: #eb0a0a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.social-icons {
+  margin-top: 5px;
+  width: 30px;
+  height: 1.5rem;
+  display: flex;
+  border-radius: 50%;
+}
+
+
+.social-icons a:hover {
+  color: #ff8c00;
+}
+
+
+
 .animated {
   opacity: 1;
   transform: translateY(20px);
@@ -18,12 +127,33 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
+  max-width: 80%;
+}
+
+.link {
+  margin-left: 40px;
+  color: azure;
+  text-decoration: underline;
 }
 
 .name {
   color: aqua;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
   text-shadow: chartreuse;
+  font-size: 0.9em;
+}
+
+@media (min-width: 1024px) {
+  .name {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 0.7em;
+  }
+
 }
 
 .cool {
@@ -40,11 +170,12 @@
 .text-center p {
   font-style: italic;
   text-align: center;
-  margin-top: 8px;
+  margin-top: 4px;
+  font-size: 0.9em;
 }
 
 .skill-icon:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* Icon glow effect */
@@ -53,89 +184,198 @@
 }
 
 .icon-glow:hover {
-  box-shadow: 0 0 10px rgba(19, 241, 11, 0.7);
+  box-shadow: 0 0 8px rgba(19, 241, 11, 0.7);
 }
 
 /* Responsive grid layout */
-@media (min-width: 640px) {
+.grid {
+  display: grid;
+  gap: 0.5rem;
+
+  /* Adjust the gap between grid items as needed */
+}
+
+@media (min-width: 1024px) {
   .grid-cols-3 {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .grid-cols-2 {
+    grid-template-rows: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 639px) {
   .grid-cols-2 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
   }
 }
 
+@media (max-width: 480px) {
+  .grid-cols-2 {
+    grid-template-rows: repeat(1, 1fr);
+    gap: 0.3rem;
+    /* Further reduce gap for very small screens */
+  }
+}
 
-/* Responsive design */
-@media (max-width: 640px) {
+/* Responsive design for containers */
+.container {
+  color: rgb(251, 253, 255);
+  padding: 2px;
+}
+
+@media (min-width: 640px) and (max-width: 768px) {
   .container {
     padding: 4px;
   }
-
-  .grid-cols-2 {
-    grid-template-columns: repeat(1, 1fr);
-  }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1024px) {
   .container {
     padding: 6px;
   }
 }
 
+/* Project images */
+.project {
+  text-align: center;
+  margin: 5px;
+}
+
+.project img {
+  width: 100%;
+  max-width: 90%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
 @media (min-width: 1024px) {
-  .container {
-    padding: 8px;
+  .project img {
+    max-width: 350px;
   }
 }
 
-/* Grid layout for large and small screens */
-.grid {
-  display: grid;
-  gap: 1.5rem;
-  /* Adjust the gap between grid items as needed */
-}
-
-@media (min-width: 1024px) {
-
-  /* 3 columns on large screens (1024px and above) */
-  .grid-cols-3 {
-    grid-template-columns: repeat(3, 1fr);
+@media (max-width: 768px) {
+  .project img {
+    max-width: 250px;
   }
 }
 
-@media (max-width: 1023px) {
-
-  /* 2 columns on small screens (1023px and below) */
-  .grid-cols-2 {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 480px) {
+  .project img {
+    max-width: 80%;
   }
+}
+
+.project img:hover {
+  transform: scale(1.03);
+}
+
+.project h3 {
+  margin-top: 5px;
+  font-size: 1.2em;
+  color: #0609b6;
+}
+
+.text-gray-700 {
+  color: rgb(166, 213, 245);
+  text-align: center;
+}
+
+.text-gray-600 {
+  color: #370fec;
+}
+
+input,
+textarea {
+  color: rgb(10, 1, 24)
 }
 
 .w-81 {
-  border-radius: 40%;
+  border-radius: 30%;
 }
 
 .space {
   text-align: center;
   color: wheat;
   font-family: 'Courier New', Courier, monospace;
+  font-size: 1.8em;
 }
 
-.text-gray-700 {
-  color: rgb(166, 213, 245)
-}
 
 .rounded-full {
-  width: 50%;
-  height: 10rem;
+  width: 45%;
+  height: 8rem;
+  border-radius: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .rounded-full {
+    width: 65%;
+    height: 6rem;
+  }
 }
 
 .w-16 {
   border-radius: 50%;
-  height: 4rem;
+  height: 6rem;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .w-16 {
+    height: 2.5rem;
+  }
+
+
+  .nice {
+    background-color: blueviolet;
+  }
+}
+
+.touch {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.touch:hover {
+  transform: scale(1.4);
+}
+
+.who {
+  font-size: 50px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;
+
+}
+
+.mt-2 {
+  color: #370fec;
+}
+
+.build {
+  font-size: 2.5em;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold';
+  text-align: left;
+}
+
+.build1 {
+  color: #370fec;
+  font-size: 2.5em;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold';
+}
+
+.eze {
+  font-size: 2.1em;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia;
+}
+
+.king {
+  font-size: 1.8em;
+  text-align: center;
+  font-family: monospace;
 }
