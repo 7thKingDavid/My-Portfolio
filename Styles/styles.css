@@ -1,5 +1,114 @@
 /* This is a comment to help GitHub detect CSS */
 /* Initial states for animations */
+
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 10px 20px;
+  position: relative;
+  align-items: center;
+  
+}
+
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  align-items: center;
+  right: 20px;
+  /* Aligns the hamburger icon to the right */
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-links a:hover {
+  color: #ff8c00;
+}
+
+/* Hidden by default */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: #333;
+    width: 200px;
+    border-radius: 5px;
+    z-index: 1;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links a {
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Resume Page Styles */
+header {
+  background-color: #eb0a0a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.social-icons {
+  margin-top: 5px;
+  width: 30px;
+  height: 1.5rem;
+  display: flex;
+  border-radius: 50%;
+}
+
+
+.social-icons a:hover {
+  color: #ff8c00;
+}
+
+
+
 .animated {
   opacity: 1;
   transform: translateY(20px);
@@ -19,6 +128,12 @@
   margin-right: auto;
   display: block;
   max-width: 80%;
+}
+
+.link {
+  margin-left: 40px;
+  color: azure;
+  text-decoration: underline;
 }
 
 .name {
@@ -168,6 +283,7 @@
 
 .text-gray-700 {
   color: rgb(166, 213, 245);
+  text-align: center;
 }
 
 .text-gray-600 {
@@ -187,13 +303,16 @@ textarea {
   text-align: center;
   color: wheat;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 0.8em;
+  font-size: 1.8em;
 }
+
 
 .rounded-full {
   width: 45%;
   height: 8rem;
+  border-radius: 10px;
 }
+
 
 @media (max-width: 768px) {
   .rounded-full {
@@ -225,4 +344,38 @@ textarea {
 
 .touch:hover {
   transform: scale(1.4);
+}
+
+.who {
+  font-size: 50px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial;
+
+}
+
+.mt-2 {
+  color: #370fec;
+}
+
+.build {
+  font-size: 2.5em;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold';
+  text-align: left;
+}
+
+.build1 {
+  color: #370fec;
+  font-size: 2.5em;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold';
+}
+
+.eze {
+  font-size: 2.1em;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia;
+}
+
+.king {
+  font-size: 1.8em;
+  text-align: center;
+  font-family: monospace;
 }
