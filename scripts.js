@@ -4,48 +4,88 @@
 
 function toggleMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
-    const hamburger = document.querySelector('.hamburger');
-
-    if (mobileMenu.classList.contains('hidden')) {
-        mobileMenu.classList.remove('hidden');
-        mobileMenu.classList.add('active');
-    } else {
-        mobileMenu.classList.add('hidden');
-        mobileMenu.classList.remove('active');
-    }
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('active');
 }
 
 /* ============================================
-   Smooth Scroll Behavior
-   ============================================ */
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href !== '#' && document.querySelector(href)) {
-            e.preventDefault();
-            const target = document.querySelector(href);
-            
-            // Close mobile menu if open
-            const mobileMenu = document.getElementById('mobile-menu');
-            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('active');
-            }
-
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-/* ============================================
-   Intersection Observer for Animations
+   Smooth Scroll and Active Link
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && document.querySelector(href)) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('active');
+                }
+
+                // Scroll to target
+                const target = document.querySelector(href);
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+
+                // Update active link
+                updateActiveLinks();
+            }
+        });
+    });
+
+    // Header scroll effect
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+        updateActiveLinks();
+    });
+
+    // Intersection Observer for scroll animations
+    observeElements();
+});
+
+/* ============================================
+   Update Active Navigation Links
+   ============================================ */
+
+function updateActiveLinks() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a, #mobile-menu a');
+    
+    let current = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.pageYOffset >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+}
+
+/* ============================================
+   Intersection Observer for Scroll Animations
+   ============================================ */
+
+function observeElements() {
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -55,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
@@ -64,76 +103,16 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.scroll-animate').forEach(element => {
         observer.observe(element);
     });
-
-    // Add scroll-animate class to elements
-    const skillCards = document.querySelectorAll('[class*="p-6"][class*="bg-slate"]');
-    skillCards.forEach(card => {
-        if (!card.classList.contains('scroll-animate')) {
-            card.classList.add('scroll-animate');
-            observer.observe(card);
-        }
-    });
-});
-
-/* ============================================
-   Header Scroll Effect
-   ============================================ */
-
-let lastScrollTop = 0;
-const header = document.querySelector('header');
-
-window.addEventListener('scroll', () => {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    // Add shadow when scrolling
-    if (scrollTop > 0) {
-        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
-    } else {
-        header.style.boxShadow = 'none';
-    }
-
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-});
-
-/* ============================================
-   Active Navigation Link
-   ============================================ */
-
-function updateActiveNavLink() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a, #mobile-menu a');
-
-    window.addEventListener('scroll', () => {
-        let current = '';
-
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= sectionTop - 200) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('text-teal-400');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('text-teal-400');
-            }
-        });
-    });
 }
 
-updateActiveNavLink();
-
 /* ============================================
-   Accessibility Improvements
+   Close Mobile Menu on Escape
    ============================================ */
 
-// Add keyboard navigation support
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         const mobileMenu = document.getElementById('mobile-menu');
-        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        if (!mobileMenu.classList.contains('hidden')) {
             mobileMenu.classList.add('hidden');
             mobileMenu.classList.remove('active');
         }
@@ -144,16 +123,27 @@ document.addEventListener('keydown', (e) => {
    Form Validation
    ============================================ */
 
-const contactForm = document.querySelector('form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.querySelector('form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
 
-        if (!name || !email || !message) {
-            e.preventDefault();
-            alert('Please fill in all fields.');
-        }
-    });
-}
+            if (!name || !email || !message) {
+                e.preventDefault();
+                alert('Please fill in all fields.');
+                return false;
+            }
+
+            // Simple email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                e.preventDefault();
+                alert('Please enter a valid email address.');
+                return false;
+            }
+        });
+    }
+});

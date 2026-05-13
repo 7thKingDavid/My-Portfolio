@@ -5,317 +5,281 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eze David - Frontend Engineer</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
     <link rel="icon" href="./Styles/images/logo.jpg" type="image/png">
 </head>
 
-<body class="bg-slate-950 text-slate-100 font-sans">
+<body>
 
     <!-- Navigation Header -->
-    <header class="fixed top-0 w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-800 z-50">
-        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <img src="./Styles/images/logo.jpg" alt="Logo" class="w-10 h-10 rounded-full object-cover">
-                <span class="text-lg font-semibold text-teal-400">Eze David</span>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./Styles/images/logo.jpg" alt="Logo">
+                <span>Eze David</span>
             </div>
 
-            <button class="hamburger md:hidden text-slate-100" onclick="toggleMenu()">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button class="hamburger" onclick="toggleMenu()">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
 
-            <ul class="nav-links hidden md:flex gap-8" id="nav-links">
-                <li><a href="#home" class="hover:text-teal-400 transition-colors">Home</a></li>
-                <li><a href="#about" class="hover:text-teal-400 transition-colors">About</a></li>
-                <li><a href="#skills" class="hover:text-teal-400 transition-colors">Skills</a></li>
-                <li><a href="#projects" class="hover:text-teal-400 transition-colors">Projects</a></li>
-                <li><a href="#contact" class="hover:text-teal-400 transition-colors">Contact</a></li>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800">
-            <ul class="flex flex-col gap-4 p-6">
-                <li><a href="#home" class="block hover:text-teal-400 transition-colors" onclick="toggleMenu()">Home</a></li>
-                <li><a href="#about" class="block hover:text-teal-400 transition-colors" onclick="toggleMenu()">About</a></li>
-                <li><a href="#skills" class="block hover:text-teal-400 transition-colors" onclick="toggleMenu()">Skills</a></li>
-                <li><a href="#projects" class="block hover:text-teal-400 transition-colors" onclick="toggleMenu()">Projects</a></li>
-                <li><a href="#contact" class="block hover:text-teal-400 transition-colors" onclick="toggleMenu()">Contact</a></li>
+        <div id="mobile-menu" class="hidden">
+            <ul>
+                <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
             </ul>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center pt-20 px-6 relative overflow-hidden">
-        <!-- Animated background elements -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute top-20 right-10 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl animate-pulse"></div>
-            <div class="absolute -bottom-20 left-10 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+    <section id="home">
+        <div class="hero-bg">
+            <div class="bg-blob blob-1"></div>
+            <div class="bg-blob blob-2"></div>
         </div>
 
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <p class="text-teal-400 text-lg mb-6 animate-fade-in">Welcome to my portfolio</p>
-            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in" style="animation-delay: 0.2s;">
-                Hello, I'm <span class="text-teal-400">Eze David</span>
+        <div class="hero-content">
+            <p class="hero-tag">Welcome to my portfolio</p>
+            <h1 class="hero-title">
+                Hello, I'm <span class="accent">Eze David</span>
             </h1>
-            <p class="text-2xl md:text-3xl text-slate-400 mb-8 animate-fade-in" style="animation-delay: 0.4s;">
-                Frontend Engineer • Web Developer
-            </p>
-            <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-in" style="animation-delay: 0.6s;">
+            <p class="hero-subtitle">Frontend Engineer • Web Developer</p>
+            <p class="hero-description">
                 I build responsive, modern web applications using the latest technologies. Passionate about creating beautiful user interfaces and smooth user experiences.
             </p>
 
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in" style="animation-delay: 0.8s;">
-                <a href="#projects" class="px-8 py-3 bg-teal-500 hover:bg-teal-600 text-slate-950 font-semibold rounded-lg transition-colors">
-                    View My Work
-                </a>
-                <a href="#contact" class="px-8 py-3 border border-teal-400 text-teal-400 hover:bg-teal-400/10 font-semibold rounded-lg transition-colors">
-                    Get In Touch
-                </a>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
 
-            <!-- Social Links -->
-            <div class="flex justify-center gap-6 animate-fade-in" style="animation-delay: 1s;">
-                <a href="https://www.linkedin.com/in/eze-david-azubuike/" target="_blank" class="p-3 bg-slate-800 hover:bg-teal-400/20 rounded-lg transition-colors" title="LinkedIn">
-                    <svg class="w-5 h-5 text-teal-400" fill="currentColor" viewBox="0 0 24 24">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/eze-david-azubuike/" target="_blank" class="social-link" title="LinkedIn">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
                         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.469v6.766z"/>
                     </svg>
                 </a>
-                <a href="https://github.com/7thKingDavid" target="_blank" class="p-3 bg-slate-800 hover:bg-teal-400/20 rounded-lg transition-colors" title="GitHub">
-                    <svg class="w-5 h-5 text-teal-400" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                <a href="https://github.com/7thKingDavid" target="_blank" class="social-link" title="GitHub">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                     </svg>
                 </a>
-                <a href="mailto:ezedavid868@gmail.com" class="p-3 bg-slate-800 hover:bg-teal-400/20 rounded-lg transition-colors" title="Email">
-                    <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <a href="mailto:ezedavid868@gmail.com" class="social-link" title="Email">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                     </svg>
                 </a>
             </div>
         </div>
 
-        <!-- Scroll indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div class="scroll-indicator">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
             </svg>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 px-6 bg-slate-900/50">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-4xl font-bold mb-4 text-center">About Me</h2>
-            <p class="text-center text-teal-400 mb-12 text-lg">Who I Am</p>
+    <section id="about">
+        <div class="section-header">
+            <h2>About Me</h2>
+            <p class="section-tag">Who I Am</p>
+        </div>
 
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <img src="./Styles/images/code1.jpg" alt="Eze David Azubuike" class="rounded-lg w-full object-cover h-96 shadow-2xl">
-                </div>
-                <div class="space-y-6">
-                    <p class="text-slate-300 leading-relaxed text-lg">
-                        I am a diligent and highly motivated Frontend Engineer with over a year of hands-on experience in web development. I'm proficient in HTML, CSS3, JavaScript, React.js, Tailwind CSS, and Next.js.
-                    </p>
-                    <p class="text-slate-300 leading-relaxed text-lg">
-                        My passion for technology drives me to continuously improve my skills and stay updated with the latest industry trends. I have built and maintained responsive user interfaces throughout my journey.
-                    </p>
-                    <p class="text-slate-300 leading-relaxed text-lg">
-                        I'm a communicative and collaborative professional with experience in managing small teams and working remotely. I have a strong commitment to quality and creativity in my work.
-                    </p>
-                    <a href="#contact" class="inline-block px-6 py-2 bg-teal-500 hover:bg-teal-600 text-slate-950 font-semibold rounded-lg transition-colors mt-4">
-                        Let's Work Together
-                    </a>
-                </div>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="./Styles/images/code1.jpg" alt="Eze David Azubuike">
+            </div>
+
+            <div class="about-text">
+                <p>
+                    I am a diligent and highly motivated Frontend Engineer with over a year of hands-on experience in web development. I'm proficient in HTML, CSS3, JavaScript, React.js, Tailwind CSS, and Next.js.
+                </p>
+                <p>
+                    My passion for technology drives me to continuously improve my skills and stay updated with the latest industry trends. I have built and maintained responsive user interfaces throughout my journey.
+                </p>
+                <p>
+                    I'm a communicative and collaborative professional with experience in managing small teams and working remotely. I have a strong commitment to quality and creativity in my work.
+                </p>
+                <a href="#contact" class="btn btn-primary" style="width: fit-content;">Let's Work Together</a>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-4xl font-bold mb-4 text-center">My Skills</h2>
-            <p class="text-center text-teal-400 mb-12 text-lg">What I Can Do</p>
+    <section id="skills">
+        <div class="section-header">
+            <h2>My Skills</h2>
+            <p class="section-tag">What I Can Do</p>
+        </div>
 
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-                <div class="group relative">
-                    <div class="p-6 bg-slate-800 hover:bg-slate-700 rounded-lg text-center transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-teal-500/20">
-                        <img src="./Styles/images/HTML.png" alt="HTML" class="w-12 h-12 mx-auto mb-3 group-hover:scale-110 transition-transform">
-                        <p class="font-semibold text-slate-100">HTML</p>
-                    </div>
+        <div class="skills-grid">
+            <div class="skill-card scroll-animate">
+                <div class="skill-icon">
+                    <img src="./Styles/images/HTML.png" alt="HTML">
                 </div>
+                <p class="skill-name">HTML</p>
+            </div>
 
-                <div class="group relative">
-                    <div class="p-6 bg-slate-800 hover:bg-slate-700 rounded-lg text-center transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-teal-500/20">
-                        <img src="./Styles/images/CSS.png" alt="CSS" class="w-12 h-12 mx-auto mb-3 group-hover:scale-110 transition-transform">
-                        <p class="font-semibold text-slate-100">CSS</p>
-                    </div>
+            <div class="skill-card scroll-animate">
+                <div class="skill-icon">
+                    <img src="./Styles/images/CSS.png" alt="CSS">
                 </div>
+                <p class="skill-name">CSS</p>
+            </div>
 
-                <div class="group relative">
-                    <div class="p-6 bg-slate-800 hover:bg-slate-700 rounded-lg text-center transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-teal-500/20">
-                        <img src="./Styles/images/JavaScript" alt="JavaScript" class="w-12 h-12 mx-auto mb-3 group-hover:scale-110 transition-transform">
-                        <p class="font-semibold text-slate-100">JavaScript</p>
-                    </div>
+            <div class="skill-card scroll-animate">
+                <div class="skill-icon">
+                    <img src="./Styles/images/JavaScript" alt="JavaScript">
                 </div>
+                <p class="skill-name">JavaScript</p>
+            </div>
 
-                <div class="group relative">
-                    <div class="p-6 bg-slate-800 hover:bg-slate-700 rounded-lg text-center transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-teal-500/20">
-                        <img src="./Styles/images/REACT.JS" alt="React" class="w-12 h-12 mx-auto mb-3 group-hover:scale-110 transition-transform">
-                        <p class="font-semibold text-slate-100">React.js</p>
-                    </div>
+            <div class="skill-card scroll-animate">
+                <div class="skill-icon">
+                    <img src="./Styles/images/REACT.JS" alt="React">
                 </div>
+                <p class="skill-name">React.js</p>
+            </div>
 
-                <div class="group relative">
-                    <div class="p-6 bg-slate-800 hover:bg-slate-700 rounded-lg text-center transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-teal-500/20">
-                        <img src="./Styles/images/next-js-logo-7929BCD36F-seeklogo.com.png" alt="Next.js" class="w-12 h-12 mx-auto mb-3 group-hover:scale-110 transition-transform">
-                        <p class="font-semibold text-slate-100">Next.js</p>
-                    </div>
+            <div class="skill-card scroll-animate">
+                <div class="skill-icon">
+                    <img src="./Styles/images/next-js-logo-7929BCD36F-seeklogo.com.png" alt="Next.js">
                 </div>
+                <p class="skill-name">Next.js</p>
+            </div>
 
-                <div class="group relative">
-                    <div class="p-6 bg-slate-800 hover:bg-slate-700 rounded-lg text-center transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-teal-500/20">
-                        <img src="./Styles/images/tailwind css.png" alt="Tailwind" class="w-12 h-12 mx-auto mb-3 group-hover:scale-110 transition-transform">
-                        <p class="font-semibold text-slate-100">Tailwind CSS</p>
-                    </div>
+            <div class="skill-card scroll-animate">
+                <div class="skill-icon">
+                    <img src="./Styles/images/tailwind css.png" alt="Tailwind">
                 </div>
+                <p class="skill-name">Tailwind CSS</p>
+            </div>
 
-                <div class="group relative">
-                    <div class="p-6 bg-slate-800 hover:bg-slate-700 rounded-lg text-center transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-teal-500/20">
-                        <img src="./Styles/images/GitHub" alt="GitHub" class="w-12 h-12 mx-auto mb-3 group-hover:scale-110 transition-transform">
-                        <p class="font-semibold text-slate-100">GitHub</p>
-                    </div>
+            <div class="skill-card scroll-animate">
+                <div class="skill-icon">
+                    <img src="./Styles/images/GitHub" alt="GitHub">
                 </div>
+                <p class="skill-name">GitHub</p>
+            </div>
 
-                <div class="group relative">
-                    <div class="p-6 bg-slate-800 hover:bg-slate-700 rounded-lg text-center transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:shadow-teal-500/20">
-                        <img src="./Styles/images/typeScript.png" alt="TypeScript" class="w-12 h-12 mx-auto mb-3 group-hover:scale-110 transition-transform">
-                        <p class="font-semibold text-slate-100">TypeScript</p>
-                    </div>
+            <div class="skill-card scroll-animate">
+                <div class="skill-icon">
+                    <img src="./Styles/images/typeScript.png" alt="TypeScript">
                 </div>
+                <p class="skill-name">TypeScript</p>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 px-6 bg-slate-900/50">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-4xl font-bold mb-4 text-center">Projects</h2>
-            <p class="text-center text-teal-400 mb-12 text-lg">What I've Built</p>
+    <section id="projects">
+        <div class="section-header">
+            <h2>Projects</h2>
+            <p class="section-tag">What I've Built</p>
+        </div>
 
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Project Card 1 -->
-                <a href="https://daily-quotes-eze-davids-projects.vercel.app/" target="_blank" class="group relative overflow-hidden rounded-lg bg-slate-800 hover:bg-slate-700 transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/20">
-                    <div class="relative overflow-hidden h-64 md:h-72">
-                        <img src="./Styles/images/screenshot1.jpg" alt="Daily Quotes Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 group-hover:text-teal-400 transition-colors">Daily Quotes (SpiritSpeaks)</h3>
-                        <p class="text-slate-400 text-sm mb-4">HTML / CSS / JavaScript</p>
-                        <p class="text-slate-300">An inspirational daily quotes application with a beautiful, intuitive interface.</p>
-                    </div>
-                </a>
+        <div class="projects-grid">
+            <a href="https://daily-quotes-eze-davids-projects.vercel.app/" target="_blank" class="project-card scroll-animate">
+                <div class="project-image">
+                    <img src="./Styles/images/screenshot1.jpg" alt="Daily Quotes Project">
+                    <div class="project-overlay"></div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Daily Quotes (SpiritSpeaks)</h3>
+                    <p class="project-tech">HTML / CSS / JavaScript</p>
+                    <p class="project-description">An inspirational daily quotes application with a beautiful, intuitive interface.</p>
+                </div>
+            </a>
 
-                <!-- Project Card 2 -->
-                <a href="https://smack-ui-ux.vercel.app/" target="_blank" class="group relative overflow-hidden rounded-lg bg-slate-800 hover:bg-slate-700 transition-all duration-300 hover:shadow-2xl hover:shadow-teal-500/20">
-                    <div class="relative overflow-hidden h-64 md:h-72">
-                        <img src="./Styles/images/screenshot2.jpg" alt="Slack UI/UX Project" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2 group-hover:text-teal-400 transition-colors">Slack UI/UX Design</h3>
-                        <p class="text-slate-400 text-sm mb-4">HTML / CSS</p>
-                        <p class="text-slate-300">A responsive redesign of Slack's landing page with modern CSS techniques.</p>
-                    </div>
-                </a>
-            </div>
+            <a href="https://smack-ui-ux.vercel.app/" target="_blank" class="project-card scroll-animate">
+                <div class="project-image">
+                    <img src="./Styles/images/screenshot2.jpg" alt="Slack UI/UX Project">
+                    <div class="project-overlay"></div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Slack UI/UX Design</h3>
+                    <p class="project-tech">HTML / CSS</p>
+                    <p class="project-description">A responsive redesign of Slack's landing page with modern CSS techniques.</p>
+                </div>
+            </a>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-6">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-4xl font-bold mb-4 text-center">Get In Touch</h2>
-            <p class="text-center text-teal-400 mb-12 text-lg">Let's create something amazing together</p>
+    <section id="contact">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+            <p class="section-tag">Let's create something amazing together</p>
+        </div>
 
-            <div class="grid md:grid-cols-2 gap-8 mb-12">
-                <!-- Contact Info -->
-                <div class="space-y-6">
-                    <div>
-                        <h3 class="text-xl font-semibold text-teal-400 mb-2">Eze David Azubuike</h3>
-                        <p class="text-slate-400">Front-End Developer</p>
-                    </div>
-                    <p class="text-slate-300 leading-relaxed">
-                        I am available for freelance, part-time, or full-time positions. Feel free to reach out to me anytime.
-                    </p>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                            <a href="mailto:ezedavid868@gmail.com" class="text-slate-300 hover:text-teal-400 transition-colors">ezedavid868@gmail.com</a>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                            </svg>
-                            <a href="tel:+2348155246010" class="text-slate-300 hover:text-teal-400 transition-colors">+234 815 524 6010</a>
-                        </div>
-                    </div>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="contact-person">
+                    <h3>Eze David Azubuike</h3>
+                    <p>Front-End Developer</p>
                 </div>
 
-                <!-- Contact Form -->
-                <form action="https://formspree.io/f/xeojnwdr" method="POST" class="space-y-4">
-                    <div>
-                        <label for="name" class="block text-sm font-semibold text-slate-300 mb-2">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your name" class="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-100 placeholder-slate-500 focus:outline-none focus:border-teal-400 transition-colors" required>
+                <p class="contact-text">
+                    I am available for freelance, part-time, or full-time positions. Feel free to reach out to me anytime.
+                </p>
+
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <a href="mailto:ezedavid868@gmail.com">ezedavid868@gmail.com</a>
                     </div>
-                    <div>
-                        <label for="email" class="block text-sm font-semibold text-slate-300 mb-2">Email</label>
-                        <input type="email" id="email" name="email" placeholder="your@email.com" class="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-100 placeholder-slate-500 focus:outline-none focus:border-teal-400 transition-colors" required>
+                    <div class="contact-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        <a href="tel:+2348155246010">+234 815 524 6010</a>
                     </div>
-                    <div>
-                        <label for="message" class="block text-sm font-semibold text-slate-300 mb-2">Message</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Your message..." class="w-full px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-slate-100 placeholder-slate-500 focus:outline-none focus:border-teal-400 transition-colors resize-none" required></textarea>
-                    </div>
-                    <button type="submit" class="w-full px-6 py-3 bg-teal-500 hover:bg-teal-600 text-slate-950 font-semibold rounded-lg transition-colors">
-                        Send Message
-                    </button>
-                </form>
+                </div>
             </div>
+
+            <form action="https://formspree.io/f/xeojnwdr" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send Message</button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 px-6 bg-slate-900 border-t border-slate-800">
-        <div class="max-w-5xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
-                <p class="text-slate-400">&copy; 2024 Eze David Azubuike. All rights reserved.</p>
-                <div class="flex gap-6">
-                    <a href="https://www.linkedin.com/in/eze-david-azubuike/" target="_blank" class="p-2 bg-slate-800 hover:bg-teal-400/20 rounded transition-colors" title="LinkedIn">
-                        <svg class="w-5 h-5 text-teal-400" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.469v6.766z"/>
-                        </svg>
-                    </a>
-                    <a href="https://github.com/7thKingDavid" target="_blank" class="p-2 bg-slate-800 hover:bg-teal-400/20 rounded transition-colors" title="GitHub">
-                        <svg class="w-5 h-5 text-teal-400" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                    <a href="mailto:ezedavid868@gmail.com" class="p-2 bg-slate-800 hover:bg-teal-400/20 rounded transition-colors" title="Email">
-                        <svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
+    <footer>
+        <p>&copy; 2024 Eze David. All rights reserved. Built with passion and clean code.</p>
     </footer>
 
     <script src="./scripts.js"></script>
+
 </body>
 
 </html>
