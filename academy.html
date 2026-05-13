@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenT4Tech Academy - Turning Starters to Standouts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #003366;
+            --secondary-blue: #0066cc;
+            --accent-teal: #00d4d4;
+            --gold: #ffc107;
+            --text-primary: #ffffff;
+            --text-secondary: #e0e0e0;
+            --dark-bg: #0a1628;
+            --card-bg: #1a2a4a;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #0f2340 100%);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 2px solid var(--accent-teal);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--accent-teal);
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-teal);
+            text-shadow: 0 0 10px var(--accent-teal);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--accent-teal);
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 60px;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #003d5c 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--accent-teal) 0%, transparent 70%);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-text h1 .highlight {
+            color: var(--gold);
+        }
+
+        .hero-tagline {
+            font-size: 1.3rem;
+            color: var(--accent-teal);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--primary-blue);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 193, 7, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-teal);
+            border: 2px solid var(--accent-teal);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-teal);
+            color: var(--dark-bg);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 212, 212, 0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header .subtitle {
+            color: var(--accent-teal);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .about-content {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--gold);
+            line-height: 1.8;
+        }
+
+        /* Founder Section */
+        .founder {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(0, 212, 212, 0.05));
+        }
+
+        .founder-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .founder-image {
+            position: relative;
+        }
+
+        .founder-image img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 212, 212, 0.2);
+            border: 3px solid var(--accent-teal);
+        }
+
+        .founder-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .founder-text p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Courses Section */
+        .courses {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .course-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--accent-teal), transparent);
+            opacity: 0.1;
+            transition: left 0.5s ease;
+        }
+
+        .course-card:hover::before {
+            left: 100%;
+        }
+
+        .course-card:hover {
+            border-color: var(--accent-teal);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 212, 212, 0.2);
+        }
+
+        .course-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+        }
+
+        .course-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(0, 212, 212, 0.05));
+        }
+
+        .services-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-item {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--gold);
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 30px rgba(0, 212, 212, 0.2);
+        }
+
+        .service-item h4 {
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .service-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid var(--accent-teal);
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-teal);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--dark-bg);
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            color: var(--gold);
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-text p {
+            color: var(--text-secondary);
+        }
+
+        .contact-text a {
+            color: var(--accent-teal);
+            text-decoration: none;
+        }
+
+        .contact-text a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid var(--gold);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid var(--accent-teal);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 10px rgba(255, 193, 7, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-blue);
+            padding: 2rem;
+            text-align: center;
+            border-top: 2px solid var(--accent-teal);
+        }
+
+        footer p {
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero-content,
+            .founder-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 2rem 1rem;
+                margin-top: 70px;
+            }
+
+            .hero-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-tagline {
+                font-size: 1rem;
+            }
+
+            nav {
+                padding: 0.8rem;
+            }
+
+            .logo {
+                font-size: 1rem;
+            }
+
+            .courses-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="https://scontent.flos1-3.fna.fbcdn.net/v/t39.30808-1/512440058_122155007972521953_6456858318489707687_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=102&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=OzdUDgu42asQ7kNvwGrCroV&_nc_oc=AdpRPD_GJ0DslDXNH_5ArX9goID1zpB0p7YlHvErXHqjeTTR2OGdCxj09I-XWF1Hks4&_nc_zt=24&_nc_ht=scontent.flos1-3.fna&_nc_gid=uOR_oQSbm1ahrGfOBy0qnw&_nc_ss=7b289&oh=00_Af6kPcN20XHviAV58vNB6jHoj_CLrYBC8i_Fl7kE2x8W1A&oe=6A0A3161" alt="GenT4Tech Logo">
+                <span>GenT4Tech Academy</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Turning <span class="highlight">Starters to Standouts</span></h1>
+                <p class="hero-tagline">Are you ready to break into tech?</p>
+                <p class="hero-description">Join Nigeria's fast-growing purpose-driven tech academy training future-ready professionals with certified coaches, hands-on projects, and both online and offline classes.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Register Now</a>
+                    <a href="#courses" class="btn btn-secondary">Explore Courses</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://scontent.flos1-3.fna.fbcdn.net/v/t39.30808-1/512440058_122155007972521953_6456858318489707687_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=102&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=OzdUDgu42asQ7kNvwGrCroV&_nc_oc=AdpRPD_GJ0DslDXNH_5ArX9goID1zpB0p7YlHvErXHqjeTTR2OGdCxj09I-XWF1Hks4&_nc_zt=24&_nc_ht=scontent.flos1-3.fna&_nc_gid=uOR_oQSbm1ahrGfOBy0qnw&_nc_ss=7b289&oh=00_Af6kPcN20XHviAV58vNB6jHoj_CLrYBC8i_Fl7kE2x8W1A&oe=6A0A3161" alt="GenT4Tech Academy Logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-header">
+            <h2>About GenT4Tech Academy</h2>
+            <p class="subtitle">Empowering the next generation of tech professionals</p>
+        </div>
+        <div class="about-content">
+            <p><strong>Our Mission:</strong> To empower individuals from all backgrounds with premium, practical, and purpose-driven tech education — transforming complete beginners into industry-ready professionals through mentorship, innovation, and community-based learning.</p>
+            <p style="margin-top: 1.5rem;">At GenT4Tech Academy, we believe that everyone has the potential to excel in technology. We provide comprehensive training in web development, mobile development, cybersecurity, data analysis, QA testing, and UI/UX design. Our experienced and certified tutors deliver hands-on projects, real-world solutions, and personalized mentorship to ensure your success.</p>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder">
+        <div class="founder-content">
+            <div class="founder-image">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/11a70c6d733cb244b55ac72ba2035206~tplv-tiktokx-cropcenter_1080_1080-QusLSOyFq4uQszswrSx7QRIviIdDKm.jpeg" alt="P. David - Founder & CEO">
+            </div>
+            <div class="founder-text">
+                <h3>Meet Your Founder & CEO</h3>
+                <h4 style="color: var(--accent-teal); margin-bottom: 1rem;">Eze David Azubuike (P.DAVID)</h4>
+                <p>With a passion for education and technology, Eze David Azubuike founded GenT4Tech Academy to bridge the gap between aspiring tech professionals and industry demands. His vision is to create a community where beginners can transform into standouts through practical learning, expert mentorship, and real-world project experience.</p>
+                <p>As an experienced tech educator and solutions architect, he leads the academy with a commitment to excellence, innovation, and student success. He believes that quality education is the foundation for a thriving tech ecosystem.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <div class="section-header">
+            <h2>Our Courses</h2>
+            <p class="subtitle">Expert-led training with certified coaches and hands-on projects</p>
+        </div>
+        <div class="courses-grid">
+            <div class="course-card">
+                <div class="course-icon">🛡️</div>
+                <h3>Cybersecurity</h3>
+                <p>Master the principles of protecting systems, networks, and data from digital attacks and threats.</p>
+            </div>
+            <div class="course-card">
+                <div class="course-icon">💻</div>
+                <h3>Web Development</h3>
+                <p>Learn to build modern, responsive websites and web applications using the latest technologies.</p>
+            </div>
+            <div class="course-card">
+                <div class="course-icon">🎨</div>
+                <h3>UI/UX Design</h3>
+                <p>Create beautiful and intuitive user interfaces and experiences that users love.</p>
+            </div>
+            <div class="course-card">
+                <div class="course-icon">📊</div>
+                <h3>Data Analysis</h3>
+                <p>Extract insights from data using statistical methods and data visualization techniques.</p>
+            </div>
+            <div class="course-card">
+                <div class="course-icon">✅</div>
+                <h3>QA Testing</h3>
+                <p>Ensure software quality through comprehensive testing strategies and automation frameworks.</p>
+            </div>
+            <div class="course-card">
+                <div class="course-icon">📱</div>
+                <h3>Mobile App Development</h3>
+                <p>Build powerful mobile applications for iOS and Android platforms with modern frameworks.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p class="subtitle">Building tech solutions for startups and companies</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h4>E-Commerce Websites</h4>
+                    <p>Custom e-commerce solutions designed to grow your online business.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Investment Websites</h4>
+                    <p>Professional investment platforms built for trust and security.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Real Estate Websites</h4>
+                    <p>Feature-rich real estate portals showcasing properties effectively.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Company Websites</h4>
+                    <p>Professional corporate websites representing your brand with excellence.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Courier Service Websites</h4>
+                    <p>Logistics and delivery solutions integrated with tracking systems.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Loan Software</h4>
+                    <p>Complete loan management systems for financial institutions.</p>
+                </div>
+                <div class="service-item">
+                    <h4>Crypto Websites</h4>
+                    <p>Secure cryptocurrency platforms with advanced security features.</p>
+                </div>
+                <div class="service-item">
+                    <h4>School Management Systems</h4>
+                    <p>Complete educational management solutions for institutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+            <p class="subtitle">Ready to start your tech journey?</p>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3 style="margin-bottom: 1.5rem; color: var(--gold);">Contact Information</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-text">
+                        <h4>Location</h4>
+                        <p>Lekki Peninsula, Lagos, Nigeria</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-text">
+                        <h4>Phone</h4>
+                        <p><a href="tel:+234815524601">+234 815-524-6010</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-text">
+                        <h4>Academy Email</h4>
+                        <p><a href="mailto:GenT4Tech.Academy@outlook.com">GenT4Tech.Academy@outlook.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-text">
+                        <h4>Personal Email</h4>
+                        <p><a href="mailto:ezedavid868@gmail.com">ezedavid868@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🌐</div>
+                    <div class="contact-text">
+                        <h4>Class Format</h4>
+                        <p>Online & Offline Classes Available</p>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="course">Interested Course</label>
+                    <input type="text" id="course" name="course" placeholder="e.g., Web Development">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 GenT4Tech Academy. All rights reserved. Turning Starters to Standouts.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Hashtags: #GenT4Tech #TechSkillsThatPay #StarterToStandout #TechIsTheFuture</p>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', () => {
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            });
+        }
+
+        // Active Link Highlighting
+        const links = document.querySelectorAll('.nav-links a');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                links.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                if (navLinks.style.display === 'flex') {
+                    navLinks.style.display = 'none';
+                }
+            });
+        });
+
+        // Form Submission
+        const form = document.querySelector('.contact-form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            alert(`Thank you, ${name}! Your message has been sent. We'll contact you soon.`);
+            form.reset();
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

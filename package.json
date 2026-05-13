@@ -1,0 +1,13 @@
+{
+  "name": "eze-david-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio of Eze David Azubuike",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 3000",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "keywords": ["portfolio", "frontend"],
+  "author": "Eze David Azubuike",
+  "license": "MIT"
+}

@@ -4,223 +4,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eze David</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./Styles/styles.css">
+    <title>Eze David Azubuike (P.DAVID) - Frontend Engineer & Tech Educator</title>
+    <link rel="stylesheet" href="./styles.css">
     <link rel="icon" href="./Styles/images/logo.jpg" type="image/png">
 </head>
 
-<body class="bg-gradient-to-r from-blue-900 to-blue-400 cool">
+<body>
 
-    <!-- Header Section -->
-    <header class="flex justify-between items-center p-6 bg-blue-800 text-white">
-        <div>
-            <img src="./Styles/images/logo.jpg" alt="Logo" class="w-16">
-        </div>
+    <!-- Navigation Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./Styles/images/logo.jpg" alt="Logo">
+                <span>Eze David</span>
+            </div>
 
-        <div class="hamburger" onclick="toggleMenu()">
-            &#9776;
-        </div>
-        <nav class="navbar">
-            <ul class="nav-links" id="nav-links">
+            <button class="hamburger" onclick="toggleMenu()">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="resume.html">Resume</a></li>
+                <li><a href="academy.html">Academy</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
 
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden">
+            <ul>
+                <li><a href="#home" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="academy.html" onclick="toggleMenu()">Academy</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </ul>
+        </div>
     </header>
 
-    <!-- Centered Name Section -->
-    <section id="#home" class="text-center my-12 name">
-        <p>WE CAN CHANGE THE WORLD TOGETHER</p>
-        <br>
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="hero-bg">
+            <div class="bg-blob blob-1"></div>
+            <div class="bg-blob blob-2"></div>
+        </div>
 
-        <h1 class="text-4xl font-bold text-white animated">Hello, I'm</h1>
-        <h1 class="text-4xl font-bold text-white animated">Eze David Azubuike</h1>
-        <h1 class="text-xl text-white animated">A Frontend Engineer</h1>
-        <p class="text-white animated">I'm interested in building responsive front-end web applications using
-            latest Technologies,<br> working with teams following industry standards.
-        </p>
-    </section>
-
-    <!-- Social Links Section -->
-    <section class="text-center py-6">
-        <a href="https://www.linkedin.com/in/eze-david-azubuike/" target="_blank" class="mx-2">
-            <img src="./Styles/images/linkedIn" alt="LinkedIn" class="w-8 h-8 inline-block icon-glow w-81 touch">
-        </a>
-        <a href="https://github.com/7thKingDavid" target="_blank" class="mx-2">
-            <img src="./Styles/images/GitHub" alt="GitHub" class="w-8 h-8 inline-block icon-glow touch">
-        </a>
-        <a href="mailto:ezedavid868@gmail.com" class="mx-2">
-            <img src="./Styles/images/Gmail.png" alt="Mail" class="w-8 h-8 inline-block icon-glow w-81 touch">
-        </a>
-        <a href="tel:+2348155246010" class="mx-2">
-            <img src="./Styles/images/phoneCall" alt="Phone" class="w-8 h-8 inline-block icon-glow w-81 touch">
-        </a>
-    </section>
-    <!-- About Section -->
-    <section id="about" class="container mx-auto p-6">
-        <div class="text-center animated">
-
-            <h2 class="text-3xl font-semibold text-white mb-4">About</h2>
-            <p class="who">Who I Am:</p>
-            <p class="text-gray-100 text-justify mx-8">
-                I am a diligent and highly motivated Frontend Engineer with over a year of hands-on experience in web
-                development. I am proficient in HTML, CSS3, JavaScript, React.js, Tailwind CSS, and Next.js alongside
-                some version controls like Git and GitHub. I have
-                built and maintained responsive user interfaces in my journey so far. My
-                passion for technology drives me to continuously improve my skills and stay updated with the latest
-                industry trends. I am a communicative and collaborative professional with experience in managing small
-                teams and working remotely. In addition to my technical skills, I have a strong commitment to quality
-                and creativity in my work.
+        <div class="hero-content">
+            <p class="hero-tag">Welcome to my portfolio</p>
+            <h1 class="hero-title">
+                Hello, I'm <span class="accent">Eze David Azubuike</span>
+            </h1>
+            <p class="hero-subtitle">Frontend Engineer • Web Developer</p>
+            <p class="hero-description">
+                I build responsive, modern web applications using the latest technologies. Passionate about creating beautiful user interfaces and smooth user experiences.
             </p>
 
-            <img src="./Styles/images/code1.jpg" alt="Eze David Azubuike"
-                class="w-32 h-32 rounded-full mx-auto mb-4 pic">
-        </div>
-    </section>
-    <a href="#projects" class="link">Check out my Projects</a>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
 
-    <!-- Skills Section -->
-    <section id="skills" class="container mx-auto p-6">
-        <div class="bg-white shadow-md rounded p-6">
-            <h1 class="text-3xl font-semibold text-blue-700 mb-4 space">My Skills</h1>
-            <p class="build1">What I can Do</p>
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
-                <div class="m-4 text-center animated">
-                    <img src="./Styles/images/HTML.png" alt="HTML" class="w-16 h-16 skill-icon">
-                    <p class="mt-2">HTML</p>
-                </div>
-                <div class="m-4 text-center animated">
-                    <img src="./Styles/images/CSS.png" alt="CSS" class="w-16 h-16 skill-icon">
-                    <p class="mt-2">CSS</p>
-                </div>
-                <div class="m-4 text-center animated">
-                    <img src="./Styles/images/JavaScript" alt="JavaScript" class="w-16 h-16 skill-icon">
-                    <p class="mt-2">JavaScript</p>
-                </div>
-                <div class="m-4 text-center animated">
-                    <img src="./Styles/images/REACT.JS" alt="React" class="w-16 h-16 skill-icon">
-                    <p class="mt-2">React.JS</p>
-                </div>
-                <div class="m-4 text-center animated">
-                    <img src="./Styles/images/next-js-logo-7929BCD36F-seeklogo.com.png" alt="Next.js"
-                        class="w-16 h-16 skill-icon">
-                    <p class="mt-2">Next</p>
-                </div>
-                <div class="m-4 text-center animated">
-                    <img src="./Styles/images/tailwind css.png" alt="Tailwind" class="w-16 h-16 skill-icon">
-                    <p class="mt-2">Tailwind CSS</p>
-                </div>
-                <div class="m-4 text-center animated">
-                    <img src="./Styles/images/GitHub" alt="GitHub" class="w-16 h-16 skill-icon">
-                    <p class="mt-2">GitHub</p>
-                </div>
-                <div class="m-4 text-center animated">
-                    <img src="./Styles/images/typeScript.png" alt="Typescript" class="w-16 h-16 skill-icon">
-                    <p class="mt-2">Typescript</p>
-                </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/eze-david-azubuike/" target="_blank" class="social-link" title="LinkedIn">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.469v6.766z"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/7thKingDavid" target="_blank" class="social-link" title="GitHub">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="mailto:ezedavid868@gmail.com" class="social-link" title="Email">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                </a>
             </div>
         </div>
 
+        <div class="scroll-indicator">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-header">
+            <h2>About Me</h2>
+            <p class="section-tag">Who I Am</p>
+        </div>
+
+        <div class="about-content">
+            <div class="about-image">
+                <img src="./Styles/images/code1.jpg" alt="Eze David Azubuike">
+            </div>
+
+            <div class="about-text">
+                <p>
+                    I am a diligent and highly motivated Frontend Engineer with over a year of hands-on experience in web development. I'm proficient in HTML, CSS3, JavaScript, React.js, Tailwind CSS, and Next.js.
+                </p>
+                <p>
+                    My passion for technology drives me to continuously improve my skills and stay updated with the latest industry trends. I have built and maintained responsive user interfaces throughout my journey.
+                </p>
+                <p>
+                    I'm a communicative and collaborative professional with experience in managing small teams and working remotely. I have a strong commitment to quality and creativity in my work.
+                </p>
+                <a href="#contact" class="btn btn-primary" style="width: fit-content;">Let's Work Together</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-header">
+            <h2>My Skills</h2>
+            <p class="section-tag">What I Can Do</p>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-card scroll-animate">
+                <div class="skill-icon">
+                    <img src="./Styles/images/HTML.png" alt="HTML">
+                </div>
+                <p class="skill-name">HTML</p>
+            </div>
+
+            <div class="skill-card scroll-animate">
+                <div class="skill-icon">
+                    <img src="./Styles/images/CSS.png" alt="CSS">
+                </div>
+                <p class="skill-name">CSS</p>
+            </div>
+
+            <div class="skill-card scroll-animate">
+                <div class="skill-icon">
+                    <img src="./Styles/images/JavaScript" alt="JavaScript">
+                </div>
+                <p class="skill-name">JavaScript</p>
+            </div>
+
+            <div class="skill-card scroll-animate">
+                <div class="skill-icon">
+                    <img src="./Styles/images/REACT.JS" alt="React">
+                </div>
+                <p class="skill-name">React.js</p>
+            </div>
+
+            <div class="skill-card scroll-animate">
+                <div class="skill-icon">
+                    <img src="./Styles/images/next-js-logo-7929BCD36F-seeklogo.com.png" alt="Next.js">
+                </div>
+                <p class="skill-name">Next.js</p>
+            </div>
+
+            <div class="skill-card scroll-animate">
+                <div class="skill-icon">
+                    <img src="./Styles/images/tailwind css.png" alt="Tailwind">
+                </div>
+                <p class="skill-name">Tailwind CSS</p>
+            </div>
+
+            <div class="skill-card scroll-animate">
+                <div class="skill-icon">
+                    <img src="./Styles/images/GitHub" alt="GitHub">
+                </div>
+                <p class="skill-name">GitHub</p>
+            </div>
+
+            <div class="skill-card scroll-animate">
+                <div class="skill-icon">
+                    <img src="./Styles/images/typeScript.png" alt="TypeScript">
+                </div>
+                <p class="skill-name">TypeScript</p>
+            </div>
+
+            <div class="skill-card scroll-animate">
+                <div class="skill-icon">
+                    <img src="./Styles/images/astro.jpg" alt="Astro">
+                </div>
+                <p class="skill-name">Astro</p>
+            </div>
+
+            <div class="skill-card scroll-animate">
+                <div class="skill-icon">
+                    <img src="./Styles/images/ai-automation.jpg" alt="AI Automation">
+                </div>
+                <p class="skill-name">AI Automation</p>
+            </div>
+        </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="container mx-auto p-6">
-        <div class="bg-white shadow-md rounded p-6 cool project">
-            <h2 class="text-3xl font-semibold text-blue-700 mb-4 space">Projects</h2>
-            <p class="build">What I've Built</p>
-            <div class="grid grid-cols-2 gap-6">
-                <div class="bg-gray-100 p-4 rounded shadow animated nice">
-                    <a href="https://daily-quotes-eze-davids-projects.vercel.app/" target="_blank">
-                        <img src="./Styles/images/screenshot1.jpg" alt="Project Name Preview">
-                    </a>
-                    <h3 class="text-xl font-semibold nice1">DAILY QUOTES [SpiritSpeaks]</h3>
-                    <p class="text-gray-600 nice1">HTML/CSS/JavaScript</p>
-                </div>
-                <div class="bg-gray-100 p-4 rounded shadow animated nice">
-                    <a href="https://smack-ui-ux.vercel.app/" target="_blank">
-                        <img src="./Styles/images/screenshot2.jpg" alt="Project Name Preview">
-                    </a>
-                    <h3 class="text-xl font-semibold nice1">Slack UI/UX Design</h3>
-                    <p class="text-gray-600 nice1">HTML/CSS</p>
-                </div>
-                <!-- <div class="bg-gray-100 p-4 rounded shadow animated nice">
-                    <a href="#" target="_blank">
-                        <img src="#" alt="Project Name Preview">
-                    </a>
-                    <h3 class="text-xl font-semibold nice1">Project 3</h3>
-                    <p class="text-gray-600 nice1">Description of Project 3.</p>
-                </div>
-                <div class="bg-gray-100 p-4 rounded shadow animated nice">
-                    <a href="#" target="_blank">
-                        <img src="#" alt="Project Name Preview">
-                    </a>
-                    <h3 class="text-xl font-semibold nice1">Project 4</h3>
-                    <p class="text-gray-600 nice1">Description of Project 4.</p> -->
+    <section id="projects">
+        <div class="section-header">
+            <h2>My Projects</h2>
+            <p class="section-tag">Check Out My Work</p>
+        </div>
+
+        <div class="github-redirect">
+            <div class="github-content">
+                <svg fill="currentColor" viewBox="0 0 24 24" class="github-icon">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                <h3>View All My Projects on GitHub</h3>
+                <p>Explore my complete portfolio of projects, code repositories, and contributions</p>
+                <a href="https://github.com/7thKingDavid" target="_blank" class="btn btn-primary">Visit My GitHub</a>
             </div>
         </div>
+    </section>
+
+    <!-- Academy Section -->
+    <section id="academy">
+        <div class="section-header">
+            <h2>GenT4Tech Academy</h2>
+            <p class="section-tag">Turning Starters to Standouts</p>
+        </div>
+
+        <div class="academy-preview">
+            <div class="academy-preview-content">
+                <div class="academy-logo-section">
+                    <img src="https://scontent.flos1-3.fna.fbcdn.net/v/t39.30808-1/512440058_122155007972521953_6456858318489707687_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=102&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=OzdUDgu42asQ7kNvwGrCroV&_nc_oc=AdpRPD_GJ0DslDXNH_5ArX9goID1zpB0p7YlHvErXHqjeTTR2OGdCxj09I-XWF1Hks4&_nc_zt=24&_nc_ht=scontent.flos1-3.fna&_nc_gid=uOR_oQSbm1ahrGfOBy0qnw&_nc_ss=7b289&oh=00_Af6kPcN20XHviAV58vNB6jHoj_CLrYBC8i_Fl7kE2x8W1A&oe=6A0A3161" alt="GenT4Tech Academy Logo" class="academy-logo">
+                </div>
+
+                <div class="academy-info">
+                    <h3>Empower Your Tech Journey</h3>
+                    <p>GenT4Tech Academy is a premium tech education platform dedicated to transforming complete beginners into industry-ready professionals. With certified coaches, hands-on projects, and both online and offline classes, we're revolutionizing tech education in Nigeria.</p>
+                    
+                    <div class="academy-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-icon">✓</span>
+                            <span>6+ Expert-led Courses</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">✓</span>
+                            <span>Certified Instructors</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">✓</span>
+                            <span>Hands-on Projects</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">✓</span>
+                            <span>Online & Offline Classes</span>
+                        </div>
+                    </div>
+
+                    <a href="academy.html" class="btn btn-primary">Explore Academy</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="#contact" class="container mx-auto p-6">
-        <div class="bg-white shadow-md rounded p-6 cool">
-            <h2 class="text-3xl font-semibold text-blue-700 mb-4 space">Contact</h2>
-            <p class="build">Get In Touch</p>
-            <p class="text-gray-700 mb-4">
-            <h2 class="eze">Eze David Azubuike</h2>
-            <p class="king">Front-End Developer</p>
-            I am available for freelance, part-time or full-time positions.<br>
-            Feel free to reach out to me via email at <a href="mailto:ezedavid868@gmail.com"
-                class="text-blue-600">ezedavid868@gmail.com</a> or call me at +2348155246010.
-            </p>
-            <form action="https://formspree.io/f/xeojnwdr" method="POST" class="space-y-4">
-                <div>
-                    <label for="name" class="block text-gray-700">Name</label>
-                    <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded" required>
+    <section id="contact">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+            <p class="section-tag">Let's create something amazing together</p>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="contact-person">
+                    <h3>Eze David Azubuike (P.DAVID)</h3>
+                    <p>Front-End Developer • Founder & CEO of GenT4Tech Academy</p>
                 </div>
-                <div>
-                    <label for="email" class="block text-gray-700">Email</label>
-                    <input type="email" id="email" name="email" class="w-full p-2 border border-gray-300 rounded"
-                        required>
+
+                <p class="contact-text">
+                    I am available for freelance, part-time, or full-time positions. Feel free to reach out to me anytime.
+                </p>
+
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <a href="mailto:ezedavid868@gmail.com">ezedavid868@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                        </svg>
+                        <a href="tel:+2348155246010">+234 815 524 6010</a>
+                    </div>
                 </div>
-                <div>
-                    <label for="message" class="block text-gray-700">Message</label>
-                    <textarea id="message" name="message" rows="4" class="w-full p-2 border border-gray-300 rounded"
-                        required></textarea>
+            </div>
+
+            <form action="https://formspree.io/f/xeojnwdr" method="POST" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
                 </div>
-                <button type="submit" class="bg-blue-700 text-white px-4 py-2 rounded">Send Message</button>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Your message..." required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send Message</button>
             </form>
         </div>
     </section>
 
-    <!-- Social Links Section -->
-    <section class="text-center py-6">
-        <a href="https://www.linkedin.com/in/eze-david-azubuike/" target="_blank" class="mx-2">
-            <img src="./Styles/images/linkedIn" alt="LinkedIn" class="w-8 h-8 inline-block icon-glow w-81 touch">
-        </a>
-        <a href="https://github.com/7thKingDavid" target="_blank" class="mx-2">
-            <img src="./Styles/images/GitHub" alt="GitHub" class="w-8 h-8 inline-block icon-glow touch">
-        </a>
-        <a href="mailto:ezedavid868@gmail.com" class="mx-2">
-            <img src="./Styles/images/Gmail.png" alt="Mail" class="w-8 h-8 inline-block icon-glow w-81 touch">
-        </a>
-        <a href="tel:+2348155246010" class="mx-2">
-            <img src="./Styles/images/phoneCall" alt="Phone" class="w-8 h-8 inline-block icon-glow w-81 touch">
-        </a>
-    </section>
-
-    <!-- Footer Section -->
-    <footer class="text-center py-6 bg-blue-800 text-white">
-        <p>&copy; 2024 Eze David Azubuike. All rights reserved.</p>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Eze David. All rights reserved. Built with passion and clean code.</p>
     </footer>
 
-    <script src="./Styles/scripts.js"></script>
+    <script src="./scripts.js"></script>
+
 </body>
 
 </html>
