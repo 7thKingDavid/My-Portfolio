@@ -766,6 +766,59 @@ section {
 }
 
 /* ============================================
+   GitHub Redirect Section
+   ============================================ */
+
+.github-redirect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.05), rgba(59, 130, 246, 0.05));
+    border: 2px solid var(--accent);
+    border-radius: 1rem;
+    margin: 3rem auto;
+    max-width: 600px;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.github-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.github-icon {
+    width: 60px;
+    height: 60px;
+    color: var(--accent);
+    animation: float 3s ease-in-out infinite;
+}
+
+.github-redirect h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.github-redirect p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ============================================
    Footer
    ============================================ */
 
