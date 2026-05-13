@@ -766,6 +766,111 @@ section {
 }
 
 /* ============================================
+   Academy Section
+   ============================================ */
+
+#academy {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, rgba(20, 184, 166, 0.08), rgba(59, 130, 246, 0.08));
+}
+
+.academy-preview {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.academy-preview-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 1.5rem;
+    border: 2px solid var(--accent);
+}
+
+.academy-logo-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.academy-logo {
+    max-width: 300px;
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 20px 50px rgba(20, 184, 166, 0.2);
+    animation: float 3s ease-in-out infinite;
+}
+
+.academy-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--accent), #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.academy-info p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.academy-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-secondary);
+}
+
+.highlight-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.academy-info .btn {
+    display: inline-block;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .academy-preview-content {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    .academy-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .academy-logo {
+        max-width: 250px;
+    }
+}
+
+/* ============================================
    GitHub Redirect Section
    ============================================ */
 
