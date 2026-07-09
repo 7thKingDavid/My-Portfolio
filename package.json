@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "dev": "python3 -m http.server 3000",
-    "build": "echo 'Static site - no build needed'"
+    "build": "mkdir -p public && cp index.html public/ && cp styles.css public/ && cp scripts.js public/ && cp -r Styles public/ 2>/dev/null || true"
   },
   "keywords": ["portfolio", "frontend"],
   "author": "Eze David Azubuike",
