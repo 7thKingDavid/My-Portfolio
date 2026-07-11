@@ -167,11 +167,15 @@ nav {
 
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.25rem;
+        font-size: 1.875rem;
     }
 
     h2 {
-        font-size: 1.875rem;
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
     }
 
     .hamburger {
@@ -217,6 +221,88 @@ nav {
     #mobile-menu a:hover,
     #mobile-menu a.active {
         color: var(--accent);
+    }
+
+    /* Hero Section Mobile */
+    #home {
+        min-height: auto;
+        padding: 5.5rem 1rem 2rem;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .hero-tag {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+    }
+
+    .hero-buttons {
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn {
+        padding: 0.75rem 2rem;
+        font-size: 0.95rem;
+        width: auto;
+        min-width: 200px;
+    }
+
+    .social-links {
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .social-link {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    .bg-blob {
+        filter: blur(60px);
+    }
+
+    .blob-1 {
+        width: 200px;
+        height: 200px;
+        top: -50px;
+        right: -50px;
+    }
+
+    .blob-2 {
+        width: 150px;
+        height: 150px;
+        bottom: -50px;
+        left: -50px;
     }
 }
 
@@ -1008,27 +1094,52 @@ footer p {
     }
 
     h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
         font-size: 1.5rem;
     }
 
-    h3 {
+    h2 {
         font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1.125rem;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
     }
 
     .hero-buttons {
         flex-direction: column;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+        align-items: center;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .btn {
-        width: 100%;
+        width: auto;
+        min-width: 180px;
+        padding: 0.75rem 1.75rem;
     }
 
     section {
-        padding: 3rem 1rem;
+        padding: 2rem 1rem;
+    }
+
+    #home {
+        padding: 5rem 1rem 2rem;
     }
 
     nav {
@@ -1036,11 +1147,34 @@ footer p {
     }
 
     .logo {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .logo img {
         width: 2rem;
         height: 2rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.375rem;
+    }
+
+    .social-links {
+        gap: 0.75rem;
+    }
+
+    .social-link {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .social-link svg {
+        width: 1rem;
+        height: 1rem;
     }
 }
